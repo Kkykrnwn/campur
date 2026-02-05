@@ -77,7 +77,7 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('gedung1.jpg'); 
+                        url('https://kkykrnwn.github.io/campur/img/gedung1.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
