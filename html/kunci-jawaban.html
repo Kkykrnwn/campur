@@ -186,7 +186,9 @@
     .dropdown-items-list {
       max-height: 280px;
       overflow-y: auto;
-      padding: 0.25rem 0;
+      padding: 0;
+      /* Mencegah halaman utama ikut terscroll saat batas scroll dropdown tercapai */
+      overscroll-behavior: contain;
     }
 
     .dropdown-items-list a {
@@ -197,10 +199,12 @@
       font-size: 0.85rem;
       font-weight: 500;
       line-height: 1.4;
-      border-bottom: 1px solid #f1f5f9;
+      /* Garis pembatas di setiap judul di bawah topik */
+      border-bottom: 1px solid #e2e8f0; 
       transition: background 0.15s, color 0.15s;
     }
 
+    /* Menghilangkan border pada item paling bawah */
     .dropdown-items-list a:last-child {
       border-bottom: none;
     }
@@ -460,7 +464,7 @@
   <script>
     /* DATA KUNCI JAWABAN */
     const rawData = `
-# TOPIK 1: PEMBUKAAN MENGENAL UNIVERSITAS TERBUKA
+# TOPIK 1: PEMBUKAAN
 
 
 ## Kuis Rektor UT Menyapa
@@ -825,6 +829,377 @@ _________________________________
 
 ### Apa saja peran Mahasiswa di kampus dalam memerangi bahaya narkoba ? Kecuali:
 #### Ikut serta dalam peredaran atau penyalahgunaan narkoba
+_________________________________
+
+
+
+# TOPIK 4: PENDIDIKAN TINGGI DALAM KEHIDUPAN BERBANGSA DAN BERNEGARA
+
+
+## Kuis Edukasi Anti Korupsi
+
+### Teori Robert Klitgaard (C = D + M-A) menyatakan korupsi terjadi akibat kombinasi faktor...
+#### Monopoli kekuasaan, wewenang diskresioner, dan rendahnya akuntabilitas
+
+### Program "kantin kejujuran" di kampus relevan untuk pemberantasan korupsi karena...
+#### Membiasakan integritas melalui praktik transaksi mandiri tanpa pengawasan
+
+### Pertanyaan "Sudah makmurkah Rakyat Indonesia?" dalam slide mengkritisi
+#### Disparitas antara kekayaan alam Indonesia dan kesejahteraan rakyat
+
+### Jika mahasiswa mengkritisi kebijakan penerimaan mahasiswa baru yang berpotensi korupsi, tindakan itu termasuk fase...
+#### Preventif (pencegahan)
+
+### Pidana mati bagi koruptor diberlakukan dalam kondisi tertentu berdasarkan...
+#### UU No. 20 Tahun 2001 tentang Perubahan atas UU No. 31 Tahun 1999
+
+### Kelompok mahasiswa pegiat antikorupsi yang berfungsi sebagai watch-dog di kampus efektif jika...
+#### Mengawasi pengelolaan dana kampus dan mengkritisi kebijakan rawan korupsi
+
+### Jika sistem akuntabilitas di lembaga pemerintah diperkuat (berdasarkan teori Klitgaard), dampak yang paling mungkin adalah...
+#### Peluang korupsi menurun secara signifikan
+
+### Setelah penyidikan kasus korupsi selesai, tahap penanganan oleh Kejaksaan adalah...
+#### Pemeriksaan berkas
+
+### Tindakan "titip absen" oleh mahasiswa termasuk bentuk korupsi karena:
+#### Melanggar prinsip keadilan dan kejujuran akademik
+
+### Strategi paling komprehensif untuk mencegah korupsi di perguruan tinggi berdasarkan slide adalah...
+#### Membentuk sinergi antara penegak hukum, civitas akademika, dan penguatan jaringan masyarakat antikorupsi
+_________________________________
+
+## Kuis Deklarasi Anti  Menyontek dan Anti Plagiat
+
+### Kuis Deklarasi Anti Menyontek dan Anti Plagiat...
+#### Pancasila
+
+### Bentuk nilai-nilai utama karakter bangsa meliputi…., kecuali…
+#### Norma
+
+### Totalitas nilai dan perilaku dalam kehidupan akademik harus dimaknai, dihayati, dan diamalkan sivitas akademika merupakan pernyataan….
+#### Karekter bangsa
+
+### Tugas utama sivitas akademika melaksanakan budaya akademik meliputi….,kecuali….
+#### Membentuk
+
+### Perilaku menyontek merupakan perilaku dalam bentuk tindakan tang tidak bermartabat yang harus….
+#### dicegah dan ditanggulangi
+_________________________________
+
+## Kuis Kekuatan Pemuda dalam Pemberantasan Korupsi
+
+### Berikut ini mana yang tidak termasuk dalam Delik-delik Korupsi ?
+#### Menguntungkan keuangan negara atau perekonomian negara
+
+### Bagaimanakah Bunyi Pasal 33 Ayat 3 UUD 1945 ?
+#### Bumi dan air dan kekayaan alam yang terkandung didalamnya dikuasai oleh negara dan dipergunakan untuk sebesar-besar kemakmuran rakyat
+
+### Apa saja Korupsi yang dilakukan Pemuda? Kecuali:
+#### Masuk Kuliah Tepat Waktu
+
+### Peraturan Mengenai Korupsi diatur dalam Undang-Undang Nomor ?
+#### UNDANG-UNDANG NO 20 TH 2001
+
+### Bagaimanakah Prosedur Penanganan Kasus Korupsi di Kejasaan RI ?
+#### Penyelidikan-Penyidikan-Pemeriksaan Berkas-Penuntutan-Persidangan-Eksekusi
+_________________________________
+
+## Kuis SK Rektor Kode Etik UT
+
+### Kode etik di lingkungan Universitas Terbuka tidak berlalu untuk ....
+#### Masyarakat
+
+### Kode Etik Mahasiswa ada pada BAB….
+#### 4
+
+### Memeroleh bahan ajar merupalan salah satu ... mahasiswa.
+#### Hak
+
+### Menghayati dan melaksanakan proses belajar mandiri dalam sistem Pendidikan jarak jauh merupakan….
+#### Kewajiban
+
+### Mahasiswa yang melanggar kode etik akan mendapatkan sanksi peraturan perundang-undangan yang merupakan bentuk....
+#### Pengawasan
+_________________________________
+
+## Kuis Tata Tertib Ujian
+
+### Peserta ujian diharuskan.…
+#### berpakaian sopan (seperti berkemeja/kaos berkerah, bersepatu) dan berperilaku santun
+
+### Perlengkapan yang wajib dibawa saat ujian adalah.…
+#### pensil 2B, penghapus, rautan/serutan pensil dan ballpoint/pulpen
+
+### Peserta ujian diperbolehkan menggunakan kalkulator dalam bentuk.…
+#### kalkulator tunggal (bukan kalkulator pada handphone, laptop, tablet, smartwatch, dan sejenisnya)
+
+### Jika mahasiswa keluar ruang ujian sebelum 45 menit ujian berlangsung, peserta….
+#### dianggap tidak mengikuti ujian
+
+### Sanksi bagi peserta yang menggunakan alat komunikasi atau jasa orang lain (joki) selama ujian adalah….
+#### diberi nilai E untuk mata kuliah terkait atau nilai E seluruh mata kuliah pada semester berjalan
+_________________________________
+
+## Kuis Penggunaan Gen Ai Pada Tridharma PT
+Syarat penyelesaian
+
+### Isi Peraturan Rektor Nomor 436 Tahun 2025 pasal 50 berisi tentang...
+#### Pedoman implementasi Gen Ai disusun sebagai acuan pelaksanaan di lingkungan Universitas Terbuka
+
+### Resiko penggunaan Gen AI yang tidak tepat dapat berupa?
+#### Fabrikasi akademik
+
+### Salah satu Prinsip Penggunaan Gen Ai adalah...
+#### Transparan
+
+### Dasar Hukum dan Landasan Penanganan dugaan penyalahgunaan Gen Ai mengacu pada...
+#### Pasal 38 Peraturan Rektor Nomor 436
+
+### Menjaga Kejujuran akademik, menjelaskan kontribusi Gen Ai, Memberikan informasi kepada pembaca merupakan...
+#### Tujuan Atribusi dan Deklarasi Gen Ai
+_________________________________
+
+## Kuis Permendiknas tentang Pencegahan dan Penanggulangan Plagiat
+
+### Perilaku mencontek sangat bertentangan dengan sifat...
+#### Jujur
+
+### Sikap mencontek bertentangan dengan kejujuran karena:
+#### Menyatakan milik orang lain sebagai karya sendiri
+
+### Upaya perguruan tinggi agar mahasiswa menyadari peristiwa plagiasi:
+#### Mahasiswa diharuskan menyatakan bahwa karyanya adalah karya sendiri
+
+### Apabila terdapat peluang terjadinya plagiasi, maka yang terbaik kita lakukan adalah:
+#### Menolak ajakan untuk mengakui karya orang lain sebagai karya sendiri
+
+### Upaya terbaik bila ada indikasi terjadinya plagiasi di lingkungan kita...
+#### Mengingatkan adanya indikasi tersebut
+_________________________________
+
+## Kuis Pencegahan dan Penanganan Kekerasan Seksual
+
+### Kasus perkosaan, sentuhan fisik, bullying seksual secara verbal dan non-verbal termasuk dalam....
+#### Kekerasan seksual
+
+### Contoh kekerasan seksual di kampus adalah...
+#### Mengunggah foto bagian tubuh, atau informasi pribadi korban yang bernuansa seksual tanpa persetujuan seseorang (Korban)
+
+### Peraturan Rektor Universitas Terbuka Nomor 5 Tahun 2024 membahas....
+#### Pencegahan dan Penanganan Kekerasan Seksual di Lingkungan Universitas Terbuka.
+
+### Siapa saja yang termasuk dalam satuan tugas pencegahan dan penanggulangan kekerasan seksual di Universitas Terbuka adalah...
+#### Dosen, Tenaga kependidikan dan mahasiswa
+
+### Ancaman atau tindakan yang menyerang secara seksualitas baik secara langsung maupun tidak langsung untuk menimbulkan rasa takut atau penderitaan psikis. Termasuk dalam pelaporan kekerasan seksual pada kategori apa....
+#### Intimidasi Seksual
+_________________________________
+
+## Kuis Medsos, Bullying dan Budaya Kekerasan
+
+### Berikut sisi negatif dari dunia maya, kecuali?
+#### Pelanggaran hak cipta
+
+### Bullying dikenal disebagai?
+#### Segala bentuk penindasan atau kekerasan yang dilakukan sengaja oleh satu atau kelompok orang yang lebih kuat/berkuasa
+
+### Hukum pidana untuk tawuran diatur dalam pasal ?
+#### Pasal 358 KUH Pidana
+
+### Apa saja faktor penyebab terjadinya kekerasan dalam kampus yang berselebung Orientasi Studi dan Pengenalan kampus?
+#### Lemahnya pengawasan tindak kekerasan di dalam kampus
+
+### Pengertian hoax adalah?
+#### Berita bohong yang sengaja disebar untuk dipercayai oleh orang banyak
+_________________________________
+
+## Kuis Pengawasan Pemilu dan Peran Mahasiswa
+
+### Yang dimaksud dengan pemilu legislatif adalah pemilihan umum terhadap …
+#### Anggota DPR
+
+### Pengawas pemilu di tingkat masyarakat luas disebut …
+#### Pengawas Pemilu Lapangan
+
+### Untuk mencegah gerakan pembangkangan publik terhadap pemilu, maka upaya yang paling baik dilakukan adalah dengan …
+#### Melibatkan partisipasi masyarakat dalam Pemilu
+
+### Yang termasuk prinsip umum kerjasama pengawasan Pemilu adalah …
+#### Proporsional, profesional, efektif dan efisien
+
+### Alasan subyektif pelunya kerjasama pengawasan Pemilu, yaitu …
+#### Keterbatasan personil
+_________________________________
+
+
+
+# TOPIK 5: INFORMASI & TEKNOLOGI DALAM PENDIDIKAN JARAK JAUH UNIVERSITAS TERBUKA
+
+
+## Kuis Sumber Informasi UT
+
+### Laman UT( Universitas Terbuka) adalah halaman situs utama website yang dapat diakses melalui alamat…
+#### https//ut.ac.id
+
+### Universitas Terbuka menyediakan sumber informasi untuk mahasiswa yang berupa...
+#### Laman UT,Kalender Akademik,Katalog
+
+### Jadwal kegiatan akademik UT secara umum, yang menjadi panduan bagi mahasiswa selama menempuh pendidikan. Informasi tersebut dapat mahsiswa dapatkan dari…
+#### Kalender Akademik
+
+### Pada Laman UT https://www.ut.ac.id dimenu manakah bisa mendapat informasi katalog digital UT...
+#### Akademik
+
+### Pada halaman UT di menu manakah bisa mendapat informasi kalender Akademik UT...
+#### Akademik
+_________________________________
+
+## Kuis UT Online
+
+### Kasus: Rina aktif mengikuti Tuton selama 8 minggu. Ia rutin menjawab inisiasi tutor, berdiskusi dengan teman-teman, dan mengumpulkan tugas tepat waktu. Namun, ia tidak mengikuti ujian akhir semester. 
+
+Pertanyaan: Berdasarkan kasus tersebut, bagaimana status nilai akhir Rina? 
+#### Nilai akhir Rina tidak dapat dihitung karena tidak mengikuti ujian akhir
+
+### Kasus: Budi ingin melihat hasil nilai mata kuliah semester lalu dan melakukan registrasi ulang. Ia mencoba mengakses portal UT Online tetapi tidak bisa login karena lupa PIN. 
+
+Pertanyaan: Apa langkah yang paling tepat dilakukan Budi? 
+#### Menghubungi layanan bantuan UT untuk reset PIN SRSUT
+
+### Kasus: Santi tinggal di daerah dengan koneksi internet terbatas. Ia ingin tetap belajar menggunakan bahan ajar UT Online. 
+
+Pertanyaan: Apa solusi terbaik bagi Santi agar tetap bisa mengakses bahan ajar? 
+#### Mengunduh bahan ajar digital melalui aplikasi mobile UT
+
+### Kasus: Andi mengikuti Tuton tetapi hanya aktif di minggu pertama dan tidak mengerjakan tugas mingguan. 
+
+Pertanyaan: Bagaimana pengaruh aktivitas Andi terhadap nilai Tuton?
+#### Nilai Tuton Andi rendah karena tidak konsisten
+
+### Kasus: Dimas ingin mengetahui apakah ia sudah terdaftar di mata kuliah tertentu dan ingin melihat status pembayaran registrasi. 
+
+Pertanyaan: Fitur apa yang harus digunakan Dimas dalam UT Online? 
+#### SRSUT
+_________________________________
+
+## Kuis MY UT
+
+### Apa tujuan utama penggunaan Teknologi Single Sign On (SSO) dalam aplikasi My UT?
+#### Mempermudah login ke semua sistem UT dengan satu akun
+
+### Langkah awal yang harus dilakukan mahasiswa baru untuk login ke My UT adalah...
+#### Memasukkan NIM dan password default
+
+### Fitur ‘Tracking Bahan Ajar’ pada My UT digunakan untuk...
+#### Memantau status pengiriman dan penerimaan bahan ajar
+
+### Jika mahasiswa lupa password email ecampus UT, maka langkah yang benar adalah...
+#### Mengklik “Reset Akun Ecampus” di My UT pada fitur “Kelola Akun Ecampus UT”
+
+### Untuk mengubah skema ujian dari UTM ke UO, mahasiswa harus terlebih dahulu...
+#### Mengajukan ke UT Daerah dan melakukan pembayaran setelah diproses
+_________________________________
+
+## Kuis Perpustakaan Digital UT
+
+### Apa fungsi utama dari Online Public Access Catalog (OPAC) di Perpustakaan Digital UT?
+#### Alat bantu pencarian koleksi perpustakaan UT
+
+### Untuk mengakses e-Resources UT, mahasiswa wajib menggunakan:
+#### email e-campus UT
+
+### Berikut ini yang merupakan isi dari Repository UT adalah:
+#### Hasil karya ilmiah civitas akademika UT
+
+### Menu utama dalam Perpustakaan Digital UT yang menyediakan daftar mata kuliah, deskripsi, dan file digital adalah:
+#### RBV (Ruang Baca Virtual)
+
+### Jika mahasiswa mengalami kendala dalam aktivasi email e-campus untuk akses e-Resources, langkah yang harus dilakukan adalah...
+#### membuat tiket di hallo-ut.ut.ac.id
+_________________________________
+
+## Kuis Berkomunikasi Smart Pada Dunia Maya
+
+### Apa yang dimaksud dengan komunikasi dunia maya?
+#### Proses pengiriman dan penerimaan pesan melalui alat yang terhubung jaringan/internet
+
+### Netiquette atau netiket dalam komunikasi dunia maya adalah….
+#### Etika berkomunikasi di jaringan dunia maya
+
+### Salah satu prinsip penting netiquette adalah….
+#### Membagikan informasi yang benar-benar akurat dan bermanfaat
+
+### Dalam menghubungi dosen atau tutor, hal yang harus diperhatikan adalah….
+#### Menulis dengan kalimat sopan dan efektif
+
+### Apa tujuan utama etika berkomunikasi dalam online learning pada tuton/tuweb?
+#### Memastikan komunikasi berlangsung sopan, efektif, dan saling menghargai
+
+### Salah satu etika dalam bermedia sosial adalah tidak mengunggah konten yang sumbernya belum jelas. Hal ini bertujuan untuk….
+#### Menghindari penyebaran informasi hoaks
+
+### Salah satu dari 8 etika bermedia sosial adalah “Hati-hati dalam menyebarkan informasi pribadi (privasi) ke publik.” Apa bentuk informasi yang termasuk kategori informasi pribadi?
+#### Nomor handphone dan alamat rumah
+_________________________________
+
+
+
+# TOPIK 6: MOTIVASI DAN PERENCANAAN PROSES BELAJAR
+
+
+## Kuis Kiat Sukses dan Motivasi Belajar
+
+### Motivasi berasal dari bahasa latin yang memiliki arti to Move. Apakah bahasa latin tersebut?
+#### Movere
+
+### Sebutkan salah satu contoh motivasi intrinsik, kecuali?
+#### Penghargaan
+
+### Bagaimana mengenali UT?
+#### Baca katalog UT
+
+### Dimana anda dapat memperoleh RAT & SAT ?
+#### Ketika mengikuti Tutorial Online
+
+### Bagimana kiat dalam mengerjakan Tugas Mata Kuliah, kecuali?
+#### Pastikan menjawab seluruh pertanyaan
+_________________________________
+
+## Kuis Panduan Belajar di UT
+
+### Ciri utama Universitas Terbuka yang menyelenggarakan sistem pendidikan terbuka dan jarak jauh adalah …
+#### Terpisahnya secara fisik antara pengajar dan mahasiswa
+
+### UT tidak membatasi usia, tahun ijazah, masa belajar, waktu registrasi dan frekuensi mengikuti ujian merupakan karakteristik bahwa UT bersifat…
+#### Terbuka
+
+### UT TV, Guru Pintar Online, dan UT Journal merupakan beberapa fasilitas yang termasuk dalam layanan …
+#### Suaka-UT
+
+### Langkah pertama dalam mempelajari bahan ajar utama UT adalah …
+#### Mempelajari tinjauan mata kuliah
+
+### Hitungan 1 sks di UT adalah setara dengan …
+#### 3 modul bahan ajar utama
+_________________________________
+
+## Kuis Menjadi Mahasiswa UT yang Cerdas
+
+### Membuat yang sulit bagi orang lain menjadi mudah dilakukan jika kita tahu kuncinya, merupakan…
+#### Prinsip Cerdas
+
+### Yang bukan merupakan strategi dalam mengelola belajar secara cerdas adalah…
+#### Belajar Ketika akan ujian saja
+
+### Yang termasuk dalam cerdik dalam belajar adalah…
+#### Cerdik dalam menyusun target belajar
+
+### Manfaat dari spesifik dalam menyusun tujuan belajar adalah…
+#### Tujuan yang spesifik akan membuat target belajar menjadi akurat, dapat diukur dan menghemat waktu
+
+### Yang dimaksud dengan akurat dalam Menyusun tujuan belajar adalah….
+#### Membuat tujuan yang akurat untuk mengetahui capaian sasaran yang direncanakan sebelumnya
 `;
 
     /* PARSER & STATE MANAGEMENT */
@@ -842,38 +1217,43 @@ function parseMarkdown(text) {
 
   lines.forEach(line => {
     const trimmed = line.trim();
+    if (!trimmed) return; // Lewati baris kosong
+
     if (trimmed.startsWith('# ')) {
-      // FIX: Simpan sub-topik sebelumnya SEBELUM ganti topik baru!
       if (currentTitle && (currentQuestions.length > 0 || lastQuestion)) {
-        if (lastQuestion) {
-          currentQuestions.push(lastQuestion);
-          lastQuestion = null;
-        }
+        if (lastQuestion) { currentQuestions.push(lastQuestion); lastQuestion = null; }
         pages.push({ topic: currentTopic, title: currentTitle, items: [...currentQuestions] });
         currentQuestions = [];
         currentTitle = "";
       }
       currentTopic = trimmed.replace('# ', '').trim();
-    } else if (trimmed.startsWith('## ')) {
+    } 
+    else if (trimmed.startsWith('## ')) {
       if (currentTitle && (currentQuestions.length > 0 || lastQuestion)) {
-        if (lastQuestion) {
-          currentQuestions.push(lastQuestion);
-          lastQuestion = null;
-        }
+        if (lastQuestion) { currentQuestions.push(lastQuestion); lastQuestion = null; }
         pages.push({ topic: currentTopic, title: currentTitle, items: [...currentQuestions] });
         currentQuestions = [];
       }
       currentTitle = trimmed.replace('## ', '').trim();
-    } else if (trimmed.startsWith('### ')) {
+    } 
+    else if (trimmed.startsWith('### ')) {
       if (lastQuestion) {
         currentQuestions.push(lastQuestion);
       }
+      // Inisialisasi pertanyaan baru
       lastQuestion = { question: trimmed.replace('### ', '').trim(), answer: "" };
-    } else if (trimmed.startsWith('#### ')) {
+    } 
+    else if (trimmed.startsWith('#### ')) {
       if (lastQuestion) {
         lastQuestion.answer = trimmed.replace('#### ', '').trim();
         currentQuestions.push(lastQuestion);
         lastQuestion = null;
+      }
+    } 
+    else {
+      // FIX: Jika ada baris lanjutan (enter) pada pertanyaan sebelum ketemu '#### '
+      if (lastQuestion && !lastQuestion.answer) {
+        lastQuestion.question += "<br>" + trimmed;
       }
     }
   });
@@ -910,19 +1290,21 @@ function parseMarkdown(text) {
       const itemsList = document.getElementById('dropdownItemList');
       itemsList.innerHTML = '';
 
-      topicsMap[currentTopic].forEach(item => {
-        const link = document.createElement('a');
-        link.href = '#';
-        link.textContent = item.title;
-        
-        // KLIK SOAL: TUTUP DROPDOWN OTOMATIS & TAMPILKAN HALAMAN SOAL
-        link.onclick = (e) => {
-          e.preventDefault();
-          renderPage(item.index);
-          document.getElementById('mainDropdown').classList.remove('active');
-        };
-        itemsList.appendChild(link);
-      });
+      if (topicsMap[currentTopic]) {
+        topicsMap[currentTopic].forEach(item => {
+          const link = document.createElement('a');
+          link.href = '#';
+          link.textContent = item.title;
+          
+          // KLIK SOAL: TUTUP DROPDOWN OTOMATIS & TAMPILKAN HALAMAN SOAL
+          link.onclick = (e) => {
+            e.preventDefault();
+            renderPage(item.index);
+            document.getElementById('mainDropdown').classList.remove('active');
+          };
+          itemsList.appendChild(link);
+        });
+      }
     }
 
     // GANTI TOPIK: CEGAH DROPDOWN TERTUTUP (e.stopPropagation)
