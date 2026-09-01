@@ -422,6 +422,33 @@
       .dropdown-menu { width: 280px; }
       .card { padding: 1.25rem; min-height: 400px; }
     }
+
+    /* FOOTER HOME */
+    .home-view {
+      position: relative;
+      padding-bottom: 2.5rem; /* Memberikan ruang ekstra di bawah agar tidak menutupi tombol */
+    }
+
+    .home-footer {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    .home-footer a {
+      color: #0284c7;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .home-footer a:hover {
+      color: #0369a1;
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body oncontextmenu="return false;">
@@ -1351,6 +1378,11 @@ function parseMarkdown(text) {
   </div>
 
   <button class="btn-start" onclick="renderTOC()">Sini masuk mek &rarr;</button>
+
+  <!-- FOOTER TERINTEGRASI KANAN BAWAH HOME -->
+  <footer class="home-footer">
+    <span>Dev: <a href="https://instagram.com/kky_krnwn331" target="_blank" rel="noopener noreferrer">ikyy</a></span>
+  </footer>
 </div>
       `;
     }
