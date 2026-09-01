@@ -1323,11 +1323,20 @@ function parseMarkdown(text) {
 
     /* RENDERING ENGINE HALAMAN */
     function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      // Menggunakan requestAnimationFrame agar dipanggil tepat setelah browser selesai render layout
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      });
     }
 
-    // 1. HOME (Sembunyikan Menu Dropdown)
-    function renderHome() {
+    // 1. HOME
+    function renderHome(pushState = true) {
+      // Jika dari tombol/logo, ganti (replace) state agar tumpukan history tidak menumpuk berulang
+      if (pushState) {
+        history.replaceState({ view: 'home' }, '', '#home');
+      }
       scrollToTop();
       document.getElementById('mainDropdown').style.display = 'none';
       const card = document.getElementById('appCard');
@@ -1343,12 +1352,19 @@ function parseMarkdown(text) {
 
   <button class="btn-start" onclick="renderTOC()">Sini masuk mek &rarr;</button>
 </div>
-
       `;
     }
 
-    // 2. DAFTAR ISI (Sembunyikan Menu Dropdown)
-    function renderTOC() {
+    // 2. DAFTAR ISI
+    function renderTOC(pushState = true) {
+      // Cek apakah navigasi berasal dari dalam halaman soal atau dari Home
+      if (pushState) {
+        if (location.hash.startsWith('#page-') || location.hash === '#toc') {
+          history.replaceState({ view: 'toc' }, '', '#toc');
+        } else {
+          history.pushState({ view: 'toc' }, '', '#toc');
+        }
+      }
       scrollToTop();
       document.getElementById('mainDropdown').style.display = 'none';
       const card = document.getElementById('appCard');
@@ -1387,20 +1403,23 @@ function parseMarkdown(text) {
       `;
     }
 
-    // 3. HALAMAN SOAL (Tampilkan Menu Dropdown)
-    function renderPage(index) {
+    // 3. HALAMAN SOAL
+    function renderPage(index, pushState = true) {
       if (index < 0 || index >= pages.length) return;
       
-      // TAMPILKAN MENU DROPDOWN DI HALAMAN SOAL
+      if (pushState) {
+        if (location.hash.startsWith('#page-')) {
+          history.replaceState({ view: 'page', index: index }, '', `#page-${index}`);
+        } else {
+          history.pushState({ view: 'page', index: index }, '', `#page-${index}`);
+        }
+      }
+      
       document.getElementById('mainDropdown').style.display = 'block';
-
-      // RELOAD/RESET SCROLL DARI ATAS
-      scrollToTop();
 
       const page = pages[index];
       const card = document.getElementById('appCard');
 
-      // Sinkronkan topik aktif di dropdown dengan soal yang dibuka
       activeTopicIndex = topicsList.indexOf(page.topic);
       updateDropdownContent();
 
@@ -1411,6 +1430,7 @@ function parseMarkdown(text) {
         </div>
       `).join('');
 
+      // Render elemen ke DOM dulu
       card.innerHTML = `
         <div>
           <div class="slide-header">
@@ -1431,6 +1451,9 @@ function parseMarkdown(text) {
           </button>
         </div>
       `;
+
+      // DIPINDAHKAN KE SINI: Paksa scroll balik ke paling atas setelah HTML selesai di-render
+      scrollToTop();
     }
 
     /* PROTEKSI KEAMANAN KETAT */
@@ -1553,11 +1576,31 @@ document.addEventListener('click', (e) => {
   }
 }, true);
 
-    /* INISIALISASI */
+    /* HANDLER TOMBOL BACK DEVICE / BROWSER */
+    window.addEventListener('popstate', (e) => {
+      // Jika dropdown lagi kebuka pas di-back, tutup dropdown-nya dulu
+      const dropdown = document.getElementById('mainDropdown');
+      if (dropdown && dropdown.classList.contains('active')) {
+        dropdown.classList.remove('active');
+      }
+
+      // Jika posisi back ditekan dari dalam halaman soal mana pun, paksa ke Daftar Isi
+      if (e.state && e.state.view === 'page') {
+        renderTOC(false);
+      } else if (e.state && e.state.view === 'toc') {
+        renderTOC(false);
+      } else {
+        renderHome(false);
+      }
+    });
+
+    /* INISIALISASI (Disesuaikan untuk Replace State Awal) */
     window.addEventListener('DOMContentLoaded', () => {
       parseMarkdown(rawData);
       updateDropdownContent();
-      renderHome();
+      // Set State awal ke 'home' tanpa menambah tumpukan riwayat baru
+      history.replaceState({ view: 'home' }, '', '#home');
+      renderHome(false);
     });
   </script>
 </body>
