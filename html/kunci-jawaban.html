@@ -279,9 +279,66 @@
     .toc-header p {
       color: #64748b;
       font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    /* STYLING TAB CATEGORY SWITCHER (OSMB & PKBJJ) */
+    .category-tabs {
+      display: flex;
+      gap: 10px;
       margin-bottom: 1.5rem;
       border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 0.75rem;
+      padding-bottom: 8px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 0.65rem 1rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: none;
+      background: #f1f5f9;
+      color: #64748b;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .tab-btn.active {
+      background: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.3);
+    }
+
+    .tab-btn:hover:not(.active) {
+      background: #e2e8f0;
+      color: #334155;
+    }
+
+    /* TAMPILAN PEMILIHAN AWAL KATEGORI */
+    .empty-category-box {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .empty-category-box p {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 1.5rem;
+    }
+
+    .category-select-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 0 auto;
     }
 
     .toc-group {
@@ -487,10 +544,13 @@
       <!-- Konten dirender secara dinamis -->
     </div>
   </main>
-
   <script>
-    /* DATA KUNCI JAWABAN */
-    const rawData = `
+    /* ==========================================
+       DATA KUNCI JAWABAN (DIPISAH MASING-MASING)
+       ========================================== */
+    
+    /* 1. DATA RAW OSMB */
+    const rawDataOSMB = `
 # TOPIK 1: PEMBUKAAN
 
 
@@ -1229,13 +1289,136 @@ _________________________________
 #### Membuat tujuan yang akurat untuk mengetahui capaian sasaran yang direncanakan sebelumnya
 `;
 
+    /* 2. DATA RAW PKBJJ */
+    const rawDataPKBJJ = `
+# TOPIK 1: RENCANA BELAJAR
+
+
+## Kuis Rencana Belajar
+
+### Idealnya, sebelum melakukan proses belajar mandiri, setelah melakukan registrasi, mahasiswa UT sebaiknya....
+#### Memperoleh bahan ajar
+
+### Keterampilan belajar mandiri mahasiswa yang berkaitan dengan interaksinya dengan bahan ajar adalah...
+#### Merekam hasil baca atau hasil belajar
+
+### Agar sukses belajar di UT maka mahasiswa UT harus memiliki kemampuan berikut kecuali...
+#### Mengikuti gaya belajar pembelajar tatap muka
+
+### Tiga hal pokok yang perlu diperhatikan dalam merencanakan kegiatan belajar adalah...
+#### Tujuan belajar, jangka waktu, dan level capaian belajar
+
+### Idealnya, penyusunan rencana belajar seorang mahasiswa mencakup...
+#### Jadwal belajar semua matakuliah untuk satu semester
+_________________________________
+
+
+
+# TOPIK 2: MEMBACA DAN MEREKAM HASIL BACAAN
+
+
+## Kuis Membaca dan merekam hasil baca
+
+### Apa tujuan utama dari langkah Survey dalam model SQ3R?
+#### Memperoleh gambaran umum dan ide pokok suatu bacaan
+
+### Langkah Question dalam model SQ3R dilakukan dengan cara:
+#### Mengajukan pertanyaan terhadap bacaan dengan kata tanya
+
+### Apa yang sebaiknya dilakukan saat membaca bagian yang penting atau sulit dalam langkah Read?
+#### Memperlambat tempo membaca dan menandai hasil bacaan
+
+### Fungsi dari langkah Recite (Recall) dalam metode SQ3R adalah untuk...
+#### Mengungkapkan kembali isi bacaan secara lisan atau tertulis
+
+### Manakah pernyataan berikut yang benar mengenai cara membuat catatan setelah membaca?
+#### Catatan berupa outline atau rangkuman disesuaikan preferensi pembaca
+_________________________________
+
+
+
+# TOPIK 3: KIAT SUKSES MENGIKUTI TUTORIAL ONLINE
+
+
+## Kiat Sukses Tuton
+
+### Untuk Mahasiswa Program Diploma dan S1, tiga tugas tutorial merupakan tugas wajib yang diberikan pada pertemuan...
+#### 3,5 dan 7
+
+### Sebagai Mahasiswa baru, yang dilakukan untuk mengikuti Tutorial Online adalah...
+#### Aktivasi Tuton di MyUT
+
+### Manakah yang tidak sesuai terkait pengisian kehadiran pada Tutorial Online?
+#### Mahasiswa tidak perlu mengisi kehadiran setiap sesi
+
+### Tugas yang terdapat pada Tutorial Online sebagai asesmen yang bertujuan untuk perbaikan dalam proses Tutorial, adalah...
+#### Tes formatif
+
+### Berapa persentase kontribusi nilai Tutorial Online terhadap nilai akhir mata kuliah?
+#### 30%
+_________________________________
+
+
+
+# TOPIK 4: MENGAKSES LAYANAN UT ONLINE
+
+
+## Kuis Mengakses layanan Online
+
+### Berikut layanan yang disediakan pada MyUT...
+#### Daftar Nilai Ujian
+
+### Berikut ini merupakan bagian dari layanan Pengayaan Pembelajaran (SUAKA) yang disediakan oleh UT, Kecuali...
+#### SIA UT
+
+### Bagaimana Langkah mengakses katalog UT pada laman www.ut.ac.id?
+#### Tentang UT-Katalog & Formulir
+
+### Mahasiswa mendapatkan layanan Office 365, berikut manfaat dari Office 365 Kecuali...
+#### Tempat penyimpanan file/ berkas sebesar 1 GB
+
+### Berikut merupakan 4 Prinsip pemanfaatan Sumber Belajar, Kecuali...
+#### Hipotesis (mencoba mengutarakan jawaban)
+
+### Untuk melakukan aktivasi Akun Tutorial Online dilakukan pada aplikasi...
+#### MYUT
+_________________________________
+
+
+
+# TOPIK 5: PELAKSANAAN UJIAN ONLINE
+
+## Kuis cara Tepat Mempersiapkan Ujian Akhir Semester
+
+### Apa saja yang harus di dihindari agar dapat mengikuti UAS dengan sukses?
+#### Membaca sekaligus semua Modul/BMP saat-saat menjelang UAS
+
+### Dibawah ini merupakan strategi mengerjakan soal UAS, kecuali...
+#### Menunggu teman lain mengerjakan
+
+### Selama UAS hal-hal yang menyebabkan Anda gagal ujian karena mendapat hukuman, kecuali...
+#### Mengerjakan soal secara mandiri
+
+### Penilaian pencapaian kompetensi atau hasil belajar mahasiswa dalam suatu mata kuliah...
+#### UAS (Ujian Akhir Semester)
+
+### Materi soal UAS (Ujian akhir semester) bersumber dari...
+#### konsep-konsep penting seluruh modul/BMP mata kuliah
+`;
+
     /* PARSER & STATE MANAGEMENT */
     let pages = [];
     let topicsList = [];
     let topicsMap = {};
     let activeTopicIndex = 0;
+    let currentCategory = null; // Default null agar user memilih kategori terlebih dahulu
 
 function parseMarkdown(text) {
+  // Reset memori sebelum parse ulang agar data tidak bertumpuk
+  pages = [];
+  topicsList = [];
+  topicsMap = {};
+
   const lines = text.split('\n');
   let currentTopic = "";
   let currentTitle = "";
@@ -1244,7 +1427,7 @@ function parseMarkdown(text) {
 
   lines.forEach(line => {
     const trimmed = line.trim();
-    if (!trimmed) return; // Lewati baris kosong
+    if (!trimmed || trimmed.startsWith('____')) return; // Lewati baris kosong atau garis pemisah
 
     if (trimmed.startsWith('# ')) {
       if (currentTitle && (currentQuestions.length > 0 || lastQuestion)) {
@@ -1360,7 +1543,7 @@ function parseMarkdown(text) {
 
     // 1. HOME
     function renderHome(pushState = true) {
-      // Jika dari tombol/logo, ganti (replace) state agar tumpukan history tidak menumpuk berulang
+      currentCategory = null; // Reset pilihan kategori saat kembali ke Home
       if (pushState) {
         history.replaceState({ view: 'home' }, '', '#home');
       }
@@ -1387,6 +1570,12 @@ function parseMarkdown(text) {
       `;
     }
 
+    // FUNGSI GANTI TAB KATEGORI (OSMB <-> PKBJJ)
+    function switchCategory(category) {
+      currentCategory = category;
+      renderTOC(false);
+    }
+
     // 2. DAFTAR ISI
     function renderTOC(pushState = true) {
       // Cek apakah navigasi berasal dari dalam halaman soal atau dari Home
@@ -1403,30 +1592,58 @@ function parseMarkdown(text) {
 
       let tocContent = '';
 
-      Object.keys(topicsMap).forEach(topic => {
-        let itemsList = topicsMap[topic].map(item => `
-          <li class="toc-item" onclick="renderPage(${item.index})">
-            <span>${item.title}</span>
-            <span style="color:#0284c7;font-weight:bold;">&rarr;</span>
-          </li>
-        `).join('');
-
-        tocContent += `
-          <div class="toc-group">
-            <span class="toc-group-title">${topic}</span>
-            <ul class="toc-list">
-              ${itemsList}
-            </ul>
+      // Tampilkan instruksi jika kategori belum dipilih
+      if (!currentCategory) {
+        tocContent = `
+          <div class="empty-category-box">
+            <p>Silakan pilih kategori materi terlebih dahulu:</p>
+            <div class="category-select-btns">
+              <button class="tab-btn" onclick="switchCategory('osmb')">OSMB</button>
+              <button class="tab-btn" onclick="switchCategory('pkbjj')">PKBJJ</button>
+            </div>
           </div>
         `;
-      });
+      } else {
+        // Load dan parse data berdasarkan tab yang dipilih
+        const activeRawData = currentCategory === 'osmb' ? rawDataOSMB : rawDataPKBJJ;
+        parseMarkdown(activeRawData);
+
+        Object.keys(topicsMap).forEach(topic => {
+          let itemsList = topicsMap[topic].map(item => `
+            <li class="toc-item" onclick="renderPage(${item.index})">
+              <span>${item.title}</span>
+              <span style="color:#0284c7;font-weight:bold;">&rarr;</span>
+            </li>
+          `).join('');
+
+          tocContent += `
+            <div class="toc-group">
+              <span class="toc-group-title">${topic}</span>
+              <ul class="toc-list">
+                ${itemsList}
+              </ul>
+            </div>
+          `;
+        });
+      }
 
       card.innerHTML = `
         <div>
           <div class="toc-header">
             <h2>Daftar Isi Pembahasan</h2>
-            <p>Pilih salah satu sub-topik di bawah ini untuk melihat pembahasan soal:</p>
+            <p>Pilih kategori modul dan sub-topik di bawah ini:</p>
           </div>
+
+          <!-- TAB SWITCHER OSMB & PKBJJ -->
+          <div class="category-tabs">
+            <button class="tab-btn ${currentCategory === 'osmb' ? 'active' : ''}" onclick="switchCategory('osmb')">
+              OSMB
+            </button>
+            <button class="tab-btn ${currentCategory === 'pkbjj' ? 'active' : ''}" onclick="switchCategory('pkbjj')">
+              PKBJJ
+            </button>
+          </div>
+
           ${tocContent}
         </div>
         <div class="controls">
@@ -1540,7 +1757,7 @@ async function loadAudioToBuffer(url) {
   }
 }
 
-// LOAD PAKSA SEJAK HALAMAN DIBUKA (TANPA TUNGGU DI-KLIK)
+// LOAD PAKSA SEJAL HALAMAN DIBUKA (TANPA TUNGGU DI-KLIK)
 (async function preloadAllAudio() {
   bufferEntrance = await loadAudioToBuffer(SOUND_ENTRANCE_URL);
   bufferUniversal = await loadAudioToBuffer(SOUND_UNIVERSAL_URL);
@@ -1628,8 +1845,6 @@ document.addEventListener('click', (e) => {
 
     /* INISIALISASI (Disesuaikan untuk Replace State Awal) */
     window.addEventListener('DOMContentLoaded', () => {
-      parseMarkdown(rawData);
-      updateDropdownContent();
       // Set State awal ke 'home' tanpa menambah tumpukan riwayat baru
       history.replaceState({ view: 'home' }, '', '#home');
       renderHome(false);
